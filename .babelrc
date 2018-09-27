@@ -1,0 +1,21 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": "commonjs"
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "transform-vue-jsx"
+    ],
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "corejs": 2
+      }
+    ]
+  ]
+}

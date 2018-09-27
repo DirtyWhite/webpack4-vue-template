@@ -3596,7 +3596,7 @@ onetime@^2.0.0:
   dependencies:
     mimic-fn "^1.0.0"
 
-opn@^5.1.0:
+opn@^5.1.0, opn@^5.4.0:
   version "5.4.0"
   resolved "http://registry.npm.taobao.org/opn/download/opn-5.4.0.tgz#cb545e7aab78562beb11aa3bfabc7042e1761035"
   dependencies:

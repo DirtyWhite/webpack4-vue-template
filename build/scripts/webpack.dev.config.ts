@@ -6,7 +6,7 @@ import * as webpack from 'webpack'
 import util from './util';
 import baseConfig from './webpack.config';
 import config from '../config';
-const { root, getEntryByGlob, getTemplates } = util;
+const { getEntryByGlob, getTemplates } = util;
 const entry = getEntryByGlob(config.entry);
 
 export default merge(baseConfig, {
@@ -20,7 +20,8 @@ export default merge(baseConfig, {
             publicPath: '/',
             slot: `<div id=app></div>`
         }),
-        new webpack.HotModuleReplacementPlugin({})
+        new webpack.NamedModulesPlugin(),
+        new webpack.HotModuleReplacementPlugin()
     ],
 
 })

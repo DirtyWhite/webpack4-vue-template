@@ -3,22 +3,25 @@
 import * as webpack from 'webpack'
 import devConfig from './webpack.dev.config';
 const devServer = require('webpack-dev-server');
+const opn = require('opn');
 
-const config = {
+
+const options = {
     publicPath: '',
-    open: true,
-    openPage: '/index.html',
+    openPage: 'index.html',
     stats: "minimal",
-    hot: true,
+    port: 7070,
+    host: '0.0.0.0',
     inline: true,
     hotOnly: true,
     historyApiFallback: true
 }
 
 function task() {
-    devServer.addDevServerEntrypoints(devConfig, config);
+    devServer.addDevServerEntrypoints(devConfig, options);
     const compiler = webpack(devConfig)
-    const server = new devServer(compiler, config);
-    server.listen(7070, '0.0.0.0');
+    const server = new devServer(compiler, options);
+    server.listen(options.port, options.host);
+    opn(`http://localhost:${options.port}/${options.openPage}`)
 }
 task();

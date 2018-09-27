@@ -7,7 +7,7 @@ import util from './util';
 import config from '../config';
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const ScriptExtHtmlWebpackPlugin = require("script-ext-html-webpack-plugin");
-const { root, getEntryByGlob, getTemplates, assetsPath } = util;
+const { getEntryByGlob, getTemplates, assetsPath } = util;
 const entry = getEntryByGlob(config.entry);
 
 export default merge(baseConfig, {

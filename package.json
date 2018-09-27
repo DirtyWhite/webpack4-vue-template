@@ -30,6 +30,7 @@
     "mustache": "^3.0.0",
     "mustache-loader": "^1.4.1",
     "node-sass": "^4.9.3",
+    "opn": "^5.4.0",
     "ora": "^3.0.0",
     "sass-loader": "^7.1.0",
     "script-ext-html-webpack-plugin": "^2.0.1",

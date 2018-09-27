@@ -55,9 +55,6 @@ export default {
                 test: /\.vue$/,
                 include: root('src'),
                 loader: 'vue-loader',
-                options: {
-                    hotReload: true
-                }
             },
             {
                 test: /\.(css|scss)$/,

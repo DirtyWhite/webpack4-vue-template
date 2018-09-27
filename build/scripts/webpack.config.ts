@@ -99,6 +99,6 @@ export default {
         ]
     },
     plugins: [
-        new VueLoaderPlugin(),
+        new VueLoaderPlugin()
     ]
 }

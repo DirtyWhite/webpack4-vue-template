@@ -16,8 +16,8 @@ export const spinner = ora({
 
 let utils = {
     isDev: process.env.NODE_ENV == 'development',
-    root(dir: string) {
-        return resolve(__dirname, '../../', dir)
+    root(dir: string, ...dirs) {
+        return resolve(__dirname, '../../', dir, ...dirs)
     },
     /**
      * 根据glob 生成入口对象
@@ -58,7 +58,6 @@ let utils = {
         }
         return templates
     },
-    /**TODO:理解并实现这个配置 */
     assetsPath(_path) {
         const assetsSubDirectory = config.subDirectory
         return posix.join(assetsSubDirectory, _path)

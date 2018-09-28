@@ -10,8 +10,6 @@ export default {
     output: {
         filename: '[name].js',
         path: root(config.outputDir),
-        libraryTarget: 'umd',
-        libraryExport: 'default'
     },
     resolve: {
         extensions: ['.js', '.vue', '.json', '.ts', '.tsx'],

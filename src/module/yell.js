@@ -1,3 +1,3 @@
-export function yell() {
+export default function yell() {
     console.log("324")
 }

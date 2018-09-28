@@ -10,14 +10,16 @@ function task() {
     webpack(prodConfig, function (err, stats) {
 
         if (err) throw err
-        process.stdout.write(stats.toString({
+        process.stdout.write('\n\n' + stats.toString({
             colors: true,
             modules: false,
             version: false,
             children: false,
             chunks: false,
             chunkModules: false,
-            entrypoints: false
+            entrypoints: false,
+            hash: false,
+            timings: false,
         }) + '\n\n')
 
         if (stats.hasErrors()) {

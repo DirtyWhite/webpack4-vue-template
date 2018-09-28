@@ -37,7 +37,7 @@ export default merge(baseConfig, {
             root: root(''),
             allowExternal: true,
             beforeEmit: true,
-            verbose: true
+            verbose: false
         }),
         new webpack.DefinePlugin({
             "process.env": {

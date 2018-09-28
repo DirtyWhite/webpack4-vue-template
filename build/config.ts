@@ -1,5 +1,3 @@
-const relativePath = '../../../../';
-
 export default new class config {
 
     /**活动名 */
@@ -14,9 +12,13 @@ export default new class config {
     /**活动标题 */
     title = '活动标题'
 
+    /**拼接项目目录 */
     projectDir = `${this.year}/${this.platform}/${this.name}`;
 
-    /**是否使用服务端渲染你 */
+    /**输出目录相对位置 */
+    relativePath = '../../../../'
+
+    /**是否使用服务端渲染 */
     isSsr = false
 
     /**入口，根据需求更改 */

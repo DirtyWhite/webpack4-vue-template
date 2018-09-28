@@ -19,6 +19,7 @@ export default {
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
             '@': root('src'),
+            'lib': root('lib')
         }
     },
     module: {
@@ -104,5 +105,5 @@ export default {
     plugins: [
         new VueLoaderPlugin()
     ]
-    
+
 }

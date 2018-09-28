@@ -15,7 +15,6 @@ export default class Base extends Vue {
     render(h) {
         return <div class='root'>
             <img src={require("../images/10月.jpg")} alt="" />
-            <p>34354</p>
         </div>
     }
 }

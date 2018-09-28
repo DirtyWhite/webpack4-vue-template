@@ -20,6 +20,7 @@ export default merge(baseConfig, {
         filename: assetsPath('js/[name].[chunkhash].js'),
         chunkFilename: assetsPath('js/[id].[chunkhash].js')
     },
+    devtool: false,
     optimization: {
         minimize: true,
         nodeEnv: 'production',

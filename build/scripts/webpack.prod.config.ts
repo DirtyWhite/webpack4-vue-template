@@ -67,6 +67,8 @@ export default merge(baseConfig, {
         new ScriptExtHtmlWebpackPlugin({
             inline: /runtimechunk..*.js$/
         }),
-
+        config.showAnalyze ? new (require('webpack-bundle-analyzer').BundleAnalyzerPlugin)({
+            analyzerPort: 9090
+        }) : e=>{}
     ],
 })

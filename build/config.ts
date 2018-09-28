@@ -18,6 +18,9 @@ export default new class config {
     /**输出目录相对位置 */
     relativePath = '../../../../'
 
+    /**是否在编译完成后展现各模块的编译情况 */
+    showAnalyze = false
+
     /**是否使用服务端渲染 */
     isSsr = false
 

@@ -6,12 +6,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { root, isDev, assetsPath, getEntryByGlob } = util;
 
 export default {
-    context: root(''),
     entry: getEntryByGlob(config.entry),
     output: {
         filename: '[name].js',
         path: root(config.outputDir),
-        libraryExport: "default",
     },
     resolve: {
         extensions: ['.js', '.vue', '.json', '.ts', '.tsx'],
@@ -95,9 +93,9 @@ export default {
         ]
     },
     externals: {
-        'vue': 'window.Vue',
-        'vue-router': 'window.VueRouter',
-        'vuex': 'window.Vuex'
+        'vue': 'Vue',
+        'vue-router': 'VueRouter',
+        'vuex': 'Vuex'
     },
     plugins: [
         new VueLoaderPlugin()

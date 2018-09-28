@@ -12,20 +12,10 @@ const entry = getEntryByGlob(config.entry);
 
 export default merge(baseConfig, {
     mode: 'production',
-    output: merge(baseConfig.output, {
+    output: {
         publicPath: '',
         filename: assetsPath('js/[name].[chunkhash].js'),
         chunkFilename: assetsPath('js/[id].[chunkhash].js')
-    }),
-    devServer: {
-        contentBase: false,
-        host: '0.0.0.0',
-        port: '7070',
-        stats: 'minimal',
-        open: true,
-        historyApiFallback: true,
-        openPage: '/index.html',
-        progress: true,
     },
     optimization: {
         minimize: true,

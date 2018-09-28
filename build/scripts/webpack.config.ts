@@ -91,12 +91,18 @@ export default {
             }, {
                 test: /\.html$/,
                 include: root('src'),
-                loader: "art-template-loader"
+                loader: "mustache-loader"
             },
 
         ]
     },
+    externals: {
+        'vue': 'Vue',
+        'vue-router': 'VueRouter',
+        'vuex': 'Vuex'
+    },
     plugins: [
         new VueLoaderPlugin()
     ]
+    
 }

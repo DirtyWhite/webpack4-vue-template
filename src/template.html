@@ -5,13 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{$htmlWebpackPlugin.options.title}}</title>
-    <script>window.__webpack_public_path__ = '{{$htmlWebpackPlugin.options.publicPath}}'</script>
+    <title>{{{htmlWebpackPlugin.options.title}}}</title>
 </head>
 
 <body>
-    {{$htmlWebpackPlugin.options.slot}}
- 
+    {{{htmlWebpackPlugin.options.slot}}}
+
+
+    
+    {{^htmlWebpackPlugin.options.isDev}}
+    <script src="http://m.img4399.com/rds/base/js/vue-2.5.16.min.js"></script>
+    {{/htmlWebpackPlugin.options.isDev}}
+    {{#htmlWebpackPlugin.options.isDev}}
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.js"></script>
+    {{/htmlWebpackPlugin.options.isDev}}
     <script src="http://m.img4399.com/rds/base/js/vuex-3.0.1.min.js"></script>
     <script src="http://m.img4399.com/rds/base/js/vue-router-3.0.1.min.js"></script>
 </body>

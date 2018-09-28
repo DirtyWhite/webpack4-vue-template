@@ -36,7 +36,6 @@ export default merge(baseConfig, {
         new cleanWebpackPlugin(baseConfig.output.path, {
             root: root(''),
             allowExternal: true,
-            beforeEmit: true,
             verbose: false
         }),
         new webpack.DefinePlugin({

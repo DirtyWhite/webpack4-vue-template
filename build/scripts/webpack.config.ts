@@ -11,7 +11,6 @@ export default {
     output: {
         filename: '[name].js',
         path: root(config.outputDir),
-        publicPath: '../',
         libraryExport: "default",
     },
     resolve: {
@@ -47,8 +46,6 @@ export default {
                         }
                     }
                 ],
-
-
             },
             {
                 test: /\.vue$/,
@@ -98,9 +95,9 @@ export default {
         ]
     },
     externals: {
-        'vue': 'Vue',
-        'vue-router': 'VueRouter',
-        'vuex': 'Vuex'
+        'vue': 'window.Vue',
+        'vue-router': 'window.VueRouter',
+        'vuex': 'window.Vuex'
     },
     plugins: [
         new VueLoaderPlugin()

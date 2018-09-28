@@ -16,7 +16,7 @@ const entry = getEntryByGlob(config.entry);
 export default merge(baseConfig, {
     mode: 'production',
     output: {
-        publicPath: '',
+        publicPath: './',
         filename: assetsPath('js/[name].[chunkhash].js'),
         chunkFilename: assetsPath('js/[id].[chunkhash].js')
     },
@@ -60,7 +60,8 @@ export default merge(baseConfig, {
         }]),
         ...getTemplates(entry, {
             title: config.title,
-            publicPath: `<%= cdn %>`,
+            publicPath: "./",
+            // publicPath: `<%= cdn %>`,
             slot: `<div id=app></div>`
         }),
         new ScriptExtHtmlWebpackPlugin({

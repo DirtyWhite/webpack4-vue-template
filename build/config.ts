@@ -23,7 +23,7 @@ export default new class config {
     entry = this.isSsr ? 'src/entries/**/entry-client.{js,ts}' : 'src/entries/**/*.{js,ts}'
 
     /**静态资源输出目录 */
-    // outputDir = root(this.projectDir, relativePath + 'release/')
+    outputDir = 'release'
 
     /**模板输出目录 */
     // templateOutputDir = root(this.projectDir, relativePath + 'release/')

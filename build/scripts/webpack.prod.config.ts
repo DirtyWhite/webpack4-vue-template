@@ -56,7 +56,7 @@ export default merge(baseConfig, {
         new webpack.HashedModuleIdsPlugin(),
         new CopyWebpackPlugin([{
             from: root('src/static'),
-            to: assetsPath(''),
+            to: assetsPath('assets'),
             ignore: ['.*']
         }]),
         ...getTemplates(entry, {

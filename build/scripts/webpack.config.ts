@@ -10,7 +10,7 @@ export default {
     entry: getEntryByGlob(config.entry),
     output: {
         filename: '[name].js',
-        path: root('release'),
+        path: root(config.outputDir),
         publicPath: '../',
         libraryExport: "default",
     },

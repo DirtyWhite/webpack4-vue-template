@@ -5,8 +5,6 @@ import config from '../config';
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { root, isDev, assetsPath, getEntryByGlob } = util;
 
-
-
 export default {
     context: root(''),
     entry: getEntryByGlob(config.entry),

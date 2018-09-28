@@ -5,13 +5,15 @@ import devConfig from './webpack.dev.config';
 const devServer = require('webpack-dev-server');
 const opn = require('opn');
 
-
 const options = {
     publicPath: '',
     openPage: 'index.html',
-    stats: "minimal",
+    stats: "none",
+    overlay: true,
     port: 7070,
+    quiet: true,
     host: '0.0.0.0',
+    noInfo: true,
     inline: true,
     hotOnly: true,
     historyApiFallback: true

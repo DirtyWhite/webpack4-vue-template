@@ -1,13 +1,16 @@
 process.env.NODE_ENV = 'production'
 
-
 import * as merge from 'webpack-merge'
+import * as webpack from 'webpack'
 import baseConfig from './webpack.config';
 import util from './util';
 import config from '../config';
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const ScriptExtHtmlWebpackPlugin = require("script-ext-html-webpack-plugin");
-const { getEntryByGlob, getTemplates, assetsPath } = util;
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
+const cleanWebpackPlugin = require('clean-webpack-plugin');
+const { root, getEntryByGlob, getTemplates, assetsPath } = util;
 const entry = getEntryByGlob(config.entry);
 
 export default merge(baseConfig, {
@@ -29,16 +32,40 @@ export default merge(baseConfig, {
     },
 
     plugins: [
+        new cleanWebpackPlugin(baseConfig.output.path, {
+            root: root(''),
+            allowExternal: true,
+            beforeEmit: true,
+            verbose: true
+        }),
+        new webpack.DefinePlugin({
+            "process.env": {
+                NODE_ENV: '"production"'
+            },
+            'process.env.VUE_ENV': '"client"'
+        }),
+        new MiniCssExtractPlugin({
+            filename: assetsPath('css/[name].[contenthash].css')
+        }),
+        new OptimizeCSSPlugin({
+            cssProcessorOptions: {
+                safe: true
+            }
+        }),
+        new webpack.HashedModuleIdsPlugin(),
+        new CopyWebpackPlugin([{
+            from: root('src/static'),
+            to: assetsPath(''),
+            ignore: ['.*']
+        }]),
         ...getTemplates(entry, {
             title: config.title,
             publicPath: `<%= cdn %>`,
             slot: `<div id=app></div>`
         }),
-        new MiniCssExtractPlugin({
-            filename: assetsPath('css/[name].[contenthash].css')
-        }),
         new ScriptExtHtmlWebpackPlugin({
             inline: /runtimechunk..*.js$/
-        })
+        }),
+
     ],
 })

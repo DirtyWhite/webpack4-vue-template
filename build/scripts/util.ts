@@ -1,4 +1,5 @@
 ///<reference path="../../typings/index.d.ts"/>
+
 import { resolve, normalize, basename, dirname, extname, posix } from 'path';
 import * as merge from 'webpack-merge'
 import config from '../config';
@@ -7,7 +8,7 @@ const glob = require('glob');
 const ora = require('ora');
 
 export const spinner = ora({
-    text: 'building...',
+    text: '正在构建',
     spinner: {
         interval: 40,
         frames: ['⠋ ⠴', '⠙ ⠦', '⠹ ⠧', '⠼ ⠹', '⠴ ⠋', '⠦ ⠙', '⠧ ⠼']

@@ -31,7 +31,7 @@ export default merge(baseConfig, {
             chunks: 'all'
         },
     },
-
+    stats: 'none',
     plugins: [
         new cleanWebpackPlugin(baseConfig.output.path, {
             root: root(''),

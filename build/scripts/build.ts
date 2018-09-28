@@ -13,9 +13,11 @@ function task() {
         process.stdout.write(stats.toString({
             colors: true,
             modules: false,
+            version: false,
             children: false,
             chunks: false,
-            chunkModules: false
+            chunkModules: false,
+            entrypoints: false
         }) + '\n\n')
 
         if (stats.hasErrors()) {

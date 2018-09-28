@@ -91,7 +91,7 @@ export default {
             }, {
                 test: /\.html$/,
                 include: root('src'),
-                loader: "mustache-loader"
+                loader: "art-template-loader"
             },
 
         ]

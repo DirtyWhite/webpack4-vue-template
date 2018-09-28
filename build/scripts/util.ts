@@ -54,6 +54,7 @@ let utils = {
                     inject: true,
                     minify: false,
                     cache: true,
+                    isDev: false
                 }, config || {}))
             )
         }

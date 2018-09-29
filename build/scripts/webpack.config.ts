@@ -2,6 +2,7 @@
 import util from './util'
 import * as VueLoaderPlugin from 'vue-loader/lib/plugin'
 import config from '../config';
+import * as webpack from 'webpack'
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { root, isDev, assetsPath, getEntryByGlob } = util;
 
@@ -9,7 +10,7 @@ export default {
     entry: getEntryByGlob(config.entry),
     output: {
         filename: '[name].js',
-        path: root(config.outputDir),
+        path: root(config.outputDir)
     },
     resolve: {
         extensions: ['.js', '.vue', '.json', '.ts', '.tsx'],
@@ -93,9 +94,9 @@ export default {
         ]
     },
     externals: {
-        'vue': 'Vue',
-        'vue-router': 'VueRouter',
-        'vuex': 'Vuex'
+        'vue': '(window.Vue.default = window.Vue)',
+        'vue-router': '(window.vueRouter.default = window.vueRouter)',
+        'vuex': '(window.Vuex.default = window.Vuex)'
     },
     plugins: [
         new VueLoaderPlugin()

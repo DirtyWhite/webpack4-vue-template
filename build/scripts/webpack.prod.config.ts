@@ -5,11 +5,11 @@ import * as webpack from 'webpack'
 import baseConfig from './webpack.config';
 import util from './util';
 import config from '../config';
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const ScriptExtHtmlWebpackPlugin = require("script-ext-html-webpack-plugin");
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
-const cleanWebpackPlugin = require('clean-webpack-plugin');
+import MiniCssExtractPlugin = require('mini-css-extract-plugin')
+import ScriptExtHtmlWebpackPlugin = require("script-ext-html-webpack-plugin");
+import CopyWebpackPlugin = require('copy-webpack-plugin');
+import OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
+import cleanWebpackPlugin = require('clean-webpack-plugin');
 const { root, getEntryByGlob, getTemplates, assetsPath } = util;
 const entry = getEntryByGlob(config.entry);
 
@@ -67,8 +67,8 @@ export default merge(baseConfig, {
         new ScriptExtHtmlWebpackPlugin({
             inline: /runtimechunk..*.js$/
         }),
-        config.showAnalyze ? new (require('webpack-bundle-analyzer').BundleAnalyzerPlugin)({
+        config.showAnalyze ? (new (<any>require('webpack-bundle-analyzer')).BundleAnalyzerPlugin)({
             analyzerPort: 9090
-        }) : e=>{}
+        }) : e => { }
     ],
 })

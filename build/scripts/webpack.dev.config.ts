@@ -5,7 +5,7 @@ import * as webpack from 'webpack'
 import util from './util'
 import baseConfig from './webpack.config'
 import config from '../config'
-const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+import FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const { getEntryByGlob, getTemplates } = util
 const entry = getEntryByGlob(config.entry)
 

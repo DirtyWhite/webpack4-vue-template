@@ -3,9 +3,9 @@
 import { resolve, normalize, basename, dirname, extname, posix } from 'path';
 import * as merge from 'webpack-merge'
 import config from '../config';
-const html = require('html-webpack-plugin')
-const glob = require('glob');
-const ora = require('ora');
+import html = require('html-webpack-plugin')
+import glob = require('glob');
+import ora = require('ora');
 
 export const spinner = ora({
     text: '正在构建',

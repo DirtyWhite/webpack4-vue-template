@@ -2,8 +2,7 @@
 import util from './util'
 import * as VueLoaderPlugin from 'vue-loader/lib/plugin'
 import config from '../config';
-import * as webpack from 'webpack'
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+import MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { root, isDev, assetsPath, getEntryByGlob } = util;
 
 export default {
@@ -31,7 +30,7 @@ export default {
             {
                 test: /\.ts$/,
                 include: root('src'),
-                loader: "ts-loader"
+                loader: "ts-loader",
             },
             {
                 test: /\.tsx?$/,

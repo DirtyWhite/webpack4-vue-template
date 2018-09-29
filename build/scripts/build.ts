@@ -5,6 +5,7 @@ import chalk from 'chalk';
 import * as webpack from 'webpack'
 import prodConfig from './webpack.prod.config'
 import { spinner } from './util';
+
 function task() {
     spinner.start();
     webpack(prodConfig, function (err, stats) {

@@ -6,6 +6,7 @@
         "moduleResolution": "Node", //决定如何处理模块。或者是"Node"对于Node.js/io.js，或者是"Classic"（默认）
         "sourceMap": true, //用于debug ,生成相应的.map文件
         "target": "es5", //目标代码类型
+        "strictNullChecks": false,
         "alwaysStrict": true,
         "removeComments": true,
         "typeRoots" : [

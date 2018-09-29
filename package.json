@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": " ts-node --project build/tsconfig.json build/scripts/build.ts",
-    "dev": " ts-node --project build/tsconfig.json build/scripts/dev.ts"
+    "build": "cd build && ts-node scripts/build.ts",
+    "dev": " cd build && ts-node scripts/dev.ts"
   },
   "author": "",
   "license": "ISC",

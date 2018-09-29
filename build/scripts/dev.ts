@@ -2,8 +2,8 @@
 'use strict'
 import * as webpack from 'webpack'
 import devConfig from './webpack.dev.config';
-const devServer = require('webpack-dev-server');
-const opn = require('opn');
+import devServer = require('webpack-dev-server');
+import opn = require('opn');
 
 const options = {
     publicPath: '',

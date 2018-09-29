@@ -10,7 +10,8 @@ export default {
     entry: getEntryByGlob(config.entry),
     output: {
         filename: '[name].js',
-        path: root(config.outputDir)
+        path: root(config.outputDir),
+        libraryExport: 'default'
     },
     resolve: {
         extensions: ['.js', '.vue', '.json', '.ts', '.tsx'],
@@ -34,6 +35,7 @@ export default {
             },
             {
                 test: /\.tsx?$/,
+                include: root('src'),
                 use: [
                     {
                         loader: 'babel-loader'
@@ -95,7 +97,7 @@ export default {
     },
     externals: {
         'vue': '(window.Vue.default = window.Vue)',
-        'vue-router': '(window.vueRouter.default = window.vueRouter)',
+        'vue-router': '(window.VueRouter.default = window.VueRouter)',
         'vuex': '(window.Vuex.default = window.Vuex)'
     },
     plugins: [

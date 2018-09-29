@@ -7,7 +7,7 @@
     "build": "cd build && ts-node scripts/build.ts",
     "dev": " cd build && ts-node scripts/dev.ts"
   },
-  "author": "",
+  "author": "fupengcheng",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.1.0",

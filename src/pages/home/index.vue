@@ -12,8 +12,11 @@ import {
 export default class Home extends Vue {
 
     render(h) {
+        
         return (
-            <div class='router'>11111111</div>
+            <div class='router'>
+                
+            </div>
         )
     }
 }

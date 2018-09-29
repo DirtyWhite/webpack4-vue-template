@@ -4,10 +4,8 @@ import Vue from 'vue'
 import router from '@/router/index'
 import store from '@/store'
 import index from './index.vue'
-import test from './test';
-
-new test();
-
+import mixin from '@/mixin';
+Vue.mixin(mixin);
 new Vue({
     router,
     store,

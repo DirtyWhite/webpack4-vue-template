@@ -9,7 +9,7 @@
   ],
   "plugins": [
     [
-      "transform-vue-jsx"
+      "@babel/plugin-transform-vue-jsx"
     ],
     [
       "@babel/plugin-transform-runtime",

@@ -34,11 +34,9 @@ export default {
             },
             {
                 test: /\.tsx?$/,
-                include: root('src'),
+                exclude: /node_modules/,
                 use: [
-                    {
-                        loader: 'babel-loader'
-                    },
+                    'babel-loader',
                     {
                         loader: 'ts-loader',
                         options: {

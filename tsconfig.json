@@ -1,7 +1,4 @@
 {
-    "exclude": [
-        "node_modules"
-    ],
     "include": [
         "./src/**/*",
         "./typings/**/*"
@@ -27,6 +24,11 @@
             "es7",
             "esnext",
             "es2015"
-        ]
+        ],
+        "baseUrl": "./",
+        "paths": {
+            "@/*": ["src/*"],
+            "lib/*": ["src/lib/*"]
+        }
     }
 }

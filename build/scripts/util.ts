@@ -1,4 +1,4 @@
-///<reference path="../../typings/index.d.ts"/>
+///<reference path="../typings/index.d.ts"/>
 
 import { resolve, normalize, basename, dirname, extname, posix } from 'path';
 import * as merge from 'webpack-merge'

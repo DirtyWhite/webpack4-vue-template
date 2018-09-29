@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true, //允许从没有设置默认导出的模块中默认导入。这并不影响代码的显示，仅为了类型检查。
+        "experimentalDecorators": true, //启用实验性的ES装饰器
+        "module": "commonjs", //指定生成哪个模块系统代码
+        "moduleResolution": "Node", //决定如何处理模块。或者是"Node"对于Node.js/io.js，或者是"Classic"（默认）
+        "sourceMap": true, //用于debug ,生成相应的.map文件
+        "target": "es5", //目标代码类型
+        "alwaysStrict": true,
+        "removeComments": true,
+        "typeRoots" : [
+            "./typings/global/node",
+            "./typings/global/webpack-env"
+        ],
+        "lib": [ //编译过程中需要引入的库文件的列表
+            "dom",
+            "es5",
+            "es6",
+            "es7",
+            "esnext"
+        ],
+    }
+}

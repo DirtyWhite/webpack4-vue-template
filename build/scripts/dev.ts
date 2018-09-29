@@ -1,4 +1,4 @@
-///<reference path="../../typings/index.d.ts"/>
+///<reference path="../typings/index.d.ts"/>
 'use strict'
 import * as webpack from 'webpack'
 import devConfig from './webpack.dev.config';

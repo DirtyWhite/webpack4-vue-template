@@ -1,4 +1,4 @@
-///<reference path="../../typings/index.d.ts"/>
+///<reference path="../typings/index.d.ts"/>
 import util from './util'
 import * as VueLoaderPlugin from 'vue-loader/lib/plugin'
 import config from '../config';

@@ -1,11 +1,20 @@
 {
+    "exclude": [
+        "node_modules"
+    ],
     "include": [
         "./src/**/*",
-        "./typings/**/*"
+        "./typings/**/*",
+        "./*"
     ],
     "compilerOptions": {
+        "baseUrl": "./",
+        "paths": {
+            "@/*": ["src/*"],
+            "lib/*": ["src/lib/*"]
+        },
         "allowSyntheticDefaultImports": true, //对于没有export的库进行兼容
-        "jsx": "preserve",
+        "jsx":"preserve",
         "jsxFactory": "h",
         "strict": false, //严格模式
         "experimentalDecorators": true, //开启修饰者模式
@@ -15,8 +24,6 @@
         "moduleResolution": "node", //如何处理模块
         "isolatedModules": true,
         "emitDecoratorMetadata": true,
-        "sourceMap": true,
-        "pretty": true,
         "lib": [ //识别基本的系统类库
             "dom",
             "es5",
@@ -25,10 +32,7 @@
             "esnext",
             "es2015"
         ],
-        "baseUrl": "./",
-        "paths": {
-            "@/*": ["src/*"],
-            "lib/*": ["src/lib/*"]
-        }
+        "sourceMap": true,
+        "pretty": true
     }
 }

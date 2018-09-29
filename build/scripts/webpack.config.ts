@@ -33,10 +33,26 @@ export default {
                 loader: "ts-loader",
             },
             {
-                test: /\.tsx?$/,
+                test: /\.tsx$/,
                 exclude: /node_modules/,
                 use: [
-                    'babel-loader',
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-env'],
+                            plugins: [
+                                [
+                                    "transform-vue-jsx",
+                                ],
+                                [
+                                    "@babel/plugin-transform-runtime",
+                                    {
+                                        "corejs": 2
+                                    }
+                                ]
+                            ]
+                        }
+                    },
                     {
                         loader: 'ts-loader',
                         options: {

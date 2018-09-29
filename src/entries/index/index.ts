@@ -4,6 +4,9 @@ import Vue from 'vue'
 import router from '@/router/index'
 import store from '@/store'
 import index from './index.vue'
+import test from './test';
+
+new test();
 
 new Vue({
     router,
